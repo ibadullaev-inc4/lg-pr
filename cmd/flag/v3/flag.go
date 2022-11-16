@@ -11,15 +11,11 @@ func main() {
 	app.Name = "hello_cli"
 	app.Usage = "Print Hello World"
 	app.Flags = []cli.Flag{
-		cli.StringFlag{
-			Name:  "name, n",
-			Value: "World",
-			Usage: "Who to say hello to.",
-		},
+		cli.StringFlag{Name: "name, n"},
 	}
 	app.Action = func(c *cli.Context) error {
 		name := c.GlobalString("name")
-		fmt.Printf("Hello %s!\n", name)
+		fmt.Printf("Hello %s\n", name)
 		return nil
 	}
 	app.Run(os.Args)
