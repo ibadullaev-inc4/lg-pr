@@ -17,16 +17,37 @@ func main() {
 				cli.IntFlag{
 					Name:  "stop, s",
 					Usage: "value to count up to 10",
-					Value: 20,
+					Value: 10,
 				},
 			},
 			Action: func(c *cli.Context) error {
-				start := c.Int("stop")
+				stop := c.Int("stop")
+				if stop <= 0 {
+					fmt.Println("stop can not be negative")
+				}
+				for i := 1; i <= stop; i++ {
+					fmt.Println(i)
+				}
+				return nil
+			},
+		},
+
+		{
+			Name: "down", ShortName: "d",
+			Usage: "count down",
+			Flags: []cli.Flag{
+				cli.IntFlag{
+					Name:  "start, s",
+					Usage: "value to count down from 10",
+					Value: 10,
+				},
+			},
+			Action: func(c *cli.Context) error {
+				start := c.Int("start")
 				if start <= 0 {
 					fmt.Println("stop can not be negative")
 				}
-				fmt.Println(start)
-				for i := 1; i <= start; i++ {
+				for i := start; i >= 0; i-- {
 					fmt.Println(i)
 				}
 				return nil
