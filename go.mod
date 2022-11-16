@@ -3,6 +3,7 @@ module cli-app
 go 1.19
 
 require (
+	github.com/braintree/manners v0.0.0-20160418043613-82a8879fc5fd
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/kylelemons/go-gypsy v1.0.0
 	gopkg.in/gcfg.v1 v1.2.3
