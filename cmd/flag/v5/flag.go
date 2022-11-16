@@ -11,6 +11,8 @@ func main() {
 	app.Name = "test cli app"
 	app.Description = "New cli application"
 	app.Usage = "New cli application"
+	app.Author = "Nariman"
+	app.Email = "nariman@inc4.net"
 
 	app.Flags = []cli.Flag{
 		cli.StringFlag{
